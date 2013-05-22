@@ -1,9 +1,14 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<br>
+<div class="row">
+  <div class="span12">
+    <button ng-click="filterNumbers('all')" class="btn">All</button>
+    <button ng-click="filterNumbers('even')" class="btn">Evens</button>
+    <button ng-click="filterNumbers('odd')" class="btn">Odds</button>
+    <br><br>
+    <div ng-repeat="number in filtered">
+      <div class="span3 well well-large">
+        <h1>{{number}}</h1>
+      </div>
+    </div>
+  </div>
 </div>
