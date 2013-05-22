@@ -17,6 +17,16 @@ describe('Controller: MainCtrl', function () {
   }));
 
   it('should attach a list of numbers to the scope', function () {
-    expect(scope.numbers.length).toBe(9);
+    expect(scope.filtered.length).toBe(9);
+  });
+  it('should filter the list down to even numbers', function () {
+    scope.filterNumbers('even');
+    expect(scope.filtered.length).toBe(4);
+    expect(scope.filtered[0]).toBe('2');
+  });
+  it('should filter the list down to odd numbers', function () {
+    scope.filterNumbers('odd');
+    expect(scope.filtered.length).toBe(5);
+    expect(scope.filtered[0]).toBe('1');
   });
 });

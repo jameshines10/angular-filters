@@ -20,21 +20,21 @@ angular.module('angularFiltersApp')
     $scope.filterNumbers = function(parity){
         var filtered = [];
 
-        if(parity != 'all'){
-            filtered = $filter('filter')($scope.numbers, function(number){
-                if(parity == 'even' && parseInt(number) % 2 == 0){
-                    return number;
-                }
+        if(parity !== 'all'){
+          filtered = $filter('filter')($scope.numbers, function(number){
+            if(parity === 'even' && parseInt(number, 10) % 2 === 0){
+              return number;
+            }
 
-                if(parity == 'odd' && parseInt(number) % 2 != 0){
-                    return number;
-                }
-            });
+            if(parity === 'odd' && parseInt(number, 10) % 2 !== 0){
+              return number;
+            }
+          });
 
-            $scope.filtered = filtered;
+          $scope.filtered = filtered;
         }else{
-            $scope.filtered = $scope.numbers;
+          $scope.filtered = $scope.numbers;
         }
-    }
+      };
 
   }]);
